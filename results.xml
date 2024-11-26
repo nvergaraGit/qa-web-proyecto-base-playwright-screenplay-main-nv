@@ -1,0 +1,586 @@
+<testsuites id="" name="" tests="58" failures="6" skipped="0" errors="0" time="199.05127299999998">
+<testsuite name="e2e\example.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Chromium" tests="2" failures="0" skipped="0" time="10.719" errors="0">
+<testcase name="has title" classname="e2e\example.spec.ts" time="5.129">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-example-has-title-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get started link" classname="e2e\example.spec.ts" time="5.59">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-example-get-started-link-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\loginscreenplay.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Chromium" tests="1" failures="1" skipped="0" time="180.061" errors="0">
+<testcase name="@Feature: El usuario hace login en la pagina › Feature: usuario ingresa a su cuenta › Scenario: el usuario realiza el login en la pagina" classname="tests\loginscreenplay.spec.ts" time="180.061">
+<properties>
+<property name="GIVEN" value="usuario ingresa su correo y contraseña">
+</property>
+</properties>
+<failure message="loginscreenplay.spec.ts:19:13 Scenario: el usuario realiza el login en la pagina" type="FAILURE">
+<![CDATA[  [Chromium] › tests\loginscreenplay.spec.ts:19:13 › @Feature: El usuario hace login en la pagina › Feature: usuario ingresa a su cuenta › Scenario: el usuario realiza el login en la pagina 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.hover: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('//a[@data-toggle=\'dropdown\']//span[contains(.,\'My account\')]')
+
+
+       at src\tasks\Login.ts:12
+
+      10 |
+      11 |     async setDataForm(username: string, password: string){
+    > 12 |         await this.page.hover(LoginPage.DROPDOWN);
+         |                         ^
+      13 |         await this.page.click(LoginPage.BTN_LOGGIN);
+      14 |         await this.page.fill(LoginPage.TXT_USERNAME, username);
+      15 |         await this.page.fill(LoginPage.TXT_PASSWORD, password);
+        at Login.setDataForm (C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\src\tasks\Login.ts:12:25)
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\loginscreenplay.spec.ts:21:25
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-loginscreenplay--Fea-d5685-aliza-el-login-en-la-pagina-Chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-loginscreenplay--Fea-d5685-aliza-el-login-en-la-pagina-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\scenario1.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Chromium" tests="1" failures="1" skipped="0" time="189.68" errors="0">
+<testcase name="Escenario 1: Verificar agregar producto Apple Cinema 30" classname="tests\scenario1.spec.ts" time="189.68">
+<failure message="scenario1.spec.ts:3:5 Escenario 1: Verificar agregar producto Apple Cinema 30" type="FAILURE">
+<![CDATA[  [Chromium] › tests\scenario1.spec.ts:3:5 › Escenario 1: Verificar agregar producto Apple Cinema 30 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="option[218]"]')
+
+
+      13 |
+      14 |   // Paso 4: Introducir datos necesarios
+    > 15 |   await page.click('input[name="option[218]"]'); // Campo "Radio" requerido
+         |              ^
+      16 |
+      17 |   // Paso 5: Hacer clic en "Add to Cart"
+      18 |   await page.click('button#button-cart');
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\scenario1.spec.ts:15:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-scenario1-Escenario--4b6de-ar-producto-Apple-Cinema-30-Chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-scenario1-Escenario--4b6de-ar-producto-Apple-Cinema-30-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\scenario2.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Chromium" tests="1" failures="1" skipped="0" time="189.836" errors="0">
+<testcase name="Escenario 2: Agregar productos de Phones &amp; PDAs al carrito" classname="tests\scenario2.spec.ts" time="189.836">
+<failure message="scenario2.spec.ts:3:5 Escenario 2: Agregar productos de Phones &amp; PDAs al carrito" type="FAILURE">
+<![CDATA[  [Chromium] › tests\scenario2.spec.ts:3:5 › Escenario 2: Agregar productos de Phones & PDAs al carrito 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('button[title="Shopping Cart"]')
+
+
+      18 |
+      19 |   // Paso 4: Verificar productos en el carrito
+    > 20 |   await page.click('button[title="Shopping Cart"]');
+         |              ^
+      21 |   const cartItems = await page.locator('.table.table-bordered .text-left').count();
+      22 |   expect(cartItems).toBe(productCount);
+      23 |
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\scenario2.spec.ts:20:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-scenario2-Escenario--e09a3-s-de-Phones-PDAs-al-carrito-Chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-scenario2-Escenario--e09a3-s-de-Phones-PDAs-al-carrito-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests-examples\demo-todo-app.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Chromium" tests="24" failures="0" skipped="0" time="17.065" errors="0">
+<testcase name="New Todo › should allow me to add todo items" classname="tests-examples\demo-todo-app.spec.ts" time="4.364">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-cb93c--allow-me-to-add-todo-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New Todo › should clear text input field when an item is added" classname="tests-examples\demo-todo-app.spec.ts" time="0.372">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-86427-field-when-an-item-is-added-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New Todo › should append new items to the bottom of the list" classname="tests-examples\demo-todo-app.spec.ts" time="0.468">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-de15b-s-to-the-bottom-of-the-list-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › should allow me to mark all items as completed" classname="tests-examples\demo-todo-app.spec.ts" time="0.468">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f9478-mark-all-items-as-completed-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="tests-examples\demo-todo-app.spec.ts" time="0.5">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-3a74f-complete-state-of-all-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › complete all checkbox should update state when items are completed / cleared" classname="tests-examples\demo-todo-app.spec.ts" time="0.874">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-1b069-items-are-completed-cleared-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to mark items as complete" classname="tests-examples\demo-todo-app.spec.ts" time="0.803">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f23ad-e-to-mark-items-as-complete-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to un-mark items as complete" classname="tests-examples\demo-todo-app.spec.ts" time="0.841">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-7e469-o-un-mark-items-as-complete-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to edit an item" classname="tests-examples\demo-todo-app.spec.ts" time="0.562">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-18e17-ld-allow-me-to-edit-an-item-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should hide other controls when editing" classname="tests-examples\demo-todo-app.spec.ts" time="0.52">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-136f6-other-controls-when-editing-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should save edits on blur" classname="tests-examples\demo-todo-app.spec.ts" time="0.477">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-c7017-g-should-save-edits-on-blur-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should trim entered text" classname="tests-examples\demo-todo-app.spec.ts" time="0.537">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f1b93-ng-should-trim-entered-text-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should remove the item if an empty text string was entered" classname="tests-examples\demo-todo-app.spec.ts" time="0.547">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-3f7df-pty-text-string-was-entered-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should cancel edits on escape" classname="tests-examples\demo-todo-app.spec.ts" time="0.536">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-b0dfe-ould-cancel-edits-on-escape-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Counter › should display the current number of todo items" classname="tests-examples\demo-todo-app.spec.ts" time="0.365">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-decb7-urrent-number-of-todo-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should display the correct text" classname="tests-examples\demo-todo-app.spec.ts" time="0.456">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-a043b-ld-display-the-correct-text-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should remove completed items when clicked" classname="tests-examples\demo-todo-app.spec.ts" time="0.488">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-e3f41-ompleted-items-when-clicked-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should be hidden when there are no items that are completed" classname="tests-examples\demo-todo-app.spec.ts" time="0.568">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-8ddc4-no-items-that-are-completed-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Persistence › should persist its data" classname="tests-examples\demo-todo-app.spec.ts" time="0.604">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-ebbe1-nce-should-persist-its-data-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display active items" classname="tests-examples\demo-todo-app.spec.ts" time="0.61">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-64101--me-to-display-active-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should respect the back button" classname="tests-examples\demo-todo-app.spec.ts" time="0.613">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-7cf8c-uld-respect-the-back-button-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display completed items" classname="tests-examples\demo-todo-app.spec.ts" time="0.436">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-4151f--to-display-completed-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display all items" classname="tests-examples\demo-todo-app.spec.ts" time="0.585">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-4b396-low-me-to-display-all-items-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should highlight the currently applied filter" classname="tests-examples\demo-todo-app.spec.ts" time="0.471">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-ae530-he-currently-applied-filter-Chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\example.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Firefox" tests="2" failures="0" skipped="0" time="3.204" errors="0">
+<testcase name="has title" classname="e2e\example.spec.ts" time="1.383">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-example-has-title-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="get started link" classname="e2e\example.spec.ts" time="1.821">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-example-get-started-link-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\loginscreenplay.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Firefox" tests="1" failures="1" skipped="0" time="180.047" errors="0">
+<testcase name="@Feature: El usuario hace login en la pagina › Feature: usuario ingresa a su cuenta › Scenario: el usuario realiza el login en la pagina" classname="tests\loginscreenplay.spec.ts" time="180.047">
+<properties>
+<property name="GIVEN" value="usuario ingresa su correo y contraseña">
+</property>
+</properties>
+<failure message="loginscreenplay.spec.ts:19:13 Scenario: el usuario realiza el login en la pagina" type="FAILURE">
+<![CDATA[  [Firefox] › tests\loginscreenplay.spec.ts:19:13 › @Feature: El usuario hace login en la pagina › Feature: usuario ingresa a su cuenta › Scenario: el usuario realiza el login en la pagina 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.hover: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('//a[@data-toggle=\'dropdown\']//span[contains(.,\'My account\')]')
+
+
+       at src\tasks\Login.ts:12
+
+      10 |
+      11 |     async setDataForm(username: string, password: string){
+    > 12 |         await this.page.hover(LoginPage.DROPDOWN);
+         |                         ^
+      13 |         await this.page.click(LoginPage.BTN_LOGGIN);
+      14 |         await this.page.fill(LoginPage.TXT_USERNAME, username);
+      15 |         await this.page.fill(LoginPage.TXT_PASSWORD, password);
+        at Login.setDataForm (C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\src\tasks\Login.ts:12:25)
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\loginscreenplay.spec.ts:21:25
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-loginscreenplay--Fea-d5685-aliza-el-login-en-la-pagina-Firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-loginscreenplay--Fea-d5685-aliza-el-login-en-la-pagina-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\scenario1.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Firefox" tests="1" failures="1" skipped="0" time="180.047" errors="0">
+<testcase name="Escenario 1: Verificar agregar producto Apple Cinema 30" classname="tests\scenario1.spec.ts" time="180.047">
+<failure message="scenario1.spec.ts:3:5 Escenario 1: Verificar agregar producto Apple Cinema 30" type="FAILURE">
+<![CDATA[  [Firefox] › tests\scenario1.spec.ts:3:5 › Escenario 1: Verificar agregar producto Apple Cinema 30 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('input[name="option[218]"]')
+
+
+      13 |
+      14 |   // Paso 4: Introducir datos necesarios
+    > 15 |   await page.click('input[name="option[218]"]'); // Campo "Radio" requerido
+         |              ^
+      16 |
+      17 |   // Paso 5: Hacer clic en "Add to Cart"
+      18 |   await page.click('button#button-cart');
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\scenario1.spec.ts:15:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-scenario1-Escenario--4b6de-ar-producto-Apple-Cinema-30-Firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-scenario1-Escenario--4b6de-ar-producto-Apple-Cinema-30-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\scenario2.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Firefox" tests="1" failures="1" skipped="0" time="180.06" errors="0">
+<testcase name="Escenario 2: Agregar productos de Phones &amp; PDAs al carrito" classname="tests\scenario2.spec.ts" time="180.06">
+<failure message="scenario2.spec.ts:3:5 Escenario 2: Agregar productos de Phones &amp; PDAs al carrito" type="FAILURE">
+<![CDATA[  [Firefox] › tests\scenario2.spec.ts:3:5 › Escenario 2: Agregar productos de Phones & PDAs al carrito 
+
+    Test timeout of 180000ms exceeded.
+
+    Error: page.click: Test timeout of 180000ms exceeded.
+    Call log:
+      - waiting for locator('button[title="Shopping Cart"]')
+
+
+      18 |
+      19 |   // Paso 4: Verificar productos en el carrito
+    > 20 |   await page.click('button[title="Shopping Cart"]');
+         |              ^
+      21 |   const cartItems = await page.locator('.table.table-bordered .text-left').count();
+      22 |   expect(cartItems).toBe(productCount);
+      23 |
+        at C:\git2024\qa-web-proyecto-base-playwright-screenplay-main\tests\scenario2.spec.ts:20:14
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\tests-scenario2-Escenario--e09a3-s-de-Phones-PDAs-al-carrito-Firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-scenario2-Escenario--e09a3-s-de-Phones-PDAs-al-carrito-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests-examples\demo-todo-app.spec.ts" timestamp="2024-11-26T02:11:49.380Z" hostname="Firefox" tests="24" failures="0" skipped="0" time="29.311" errors="0">
+<testcase name="New Todo › should allow me to add todo items" classname="tests-examples\demo-todo-app.spec.ts" time="1.848">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-cb93c--allow-me-to-add-todo-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New Todo › should clear text input field when an item is added" classname="tests-examples\demo-todo-app.spec.ts" time="0.561">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-86427-field-when-an-item-is-added-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="New Todo › should append new items to the bottom of the list" classname="tests-examples\demo-todo-app.spec.ts" time="0.631">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-de15b-s-to-the-bottom-of-the-list-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › should allow me to mark all items as completed" classname="tests-examples\demo-todo-app.spec.ts" time="0.669">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f9478-mark-all-items-as-completed-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › should allow me to clear the complete state of all items" classname="tests-examples\demo-todo-app.spec.ts" time="0.668">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-3a74f-complete-state-of-all-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Mark all as completed › complete all checkbox should update state when items are completed / cleared" classname="tests-examples\demo-todo-app.spec.ts" time="0.773">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-1b069-items-are-completed-cleared-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to mark items as complete" classname="tests-examples\demo-todo-app.spec.ts" time="0.597">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f23ad-e-to-mark-items-as-complete-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to un-mark items as complete" classname="tests-examples\demo-todo-app.spec.ts" time="0.677">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-7e469-o-un-mark-items-as-complete-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Item › should allow me to edit an item" classname="tests-examples\demo-todo-app.spec.ts" time="0.642">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-18e17-ld-allow-me-to-edit-an-item-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should hide other controls when editing" classname="tests-examples\demo-todo-app.spec.ts" time="1.923">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-136f6-other-controls-when-editing-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should save edits on blur" classname="tests-examples\demo-todo-app.spec.ts" time="2.14">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-c7017-g-should-save-edits-on-blur-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should trim entered text" classname="tests-examples\demo-todo-app.spec.ts" time="0.605">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-f1b93-ng-should-trim-entered-text-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should remove the item if an empty text string was entered" classname="tests-examples\demo-todo-app.spec.ts" time="0.608">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-3f7df-pty-text-string-was-entered-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Editing › should cancel edits on escape" classname="tests-examples\demo-todo-app.spec.ts" time="1.011">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-b0dfe-ould-cancel-edits-on-escape-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Counter › should display the current number of todo items" classname="tests-examples\demo-todo-app.spec.ts" time="2.404">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-decb7-urrent-number-of-todo-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should display the correct text" classname="tests-examples\demo-todo-app.spec.ts" time="2.456">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-a043b-ld-display-the-correct-text-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should remove completed items when clicked" classname="tests-examples\demo-todo-app.spec.ts" time="0.906">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-e3f41-ompleted-items-when-clicked-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Clear completed button › should be hidden when there are no items that are completed" classname="tests-examples\demo-todo-app.spec.ts" time="2.129">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-8ddc4-no-items-that-are-completed-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Persistence › should persist its data" classname="tests-examples\demo-todo-app.spec.ts" time="1.42">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-ebbe1-nce-should-persist-its-data-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display active items" classname="tests-examples\demo-todo-app.spec.ts" time="1.228">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-64101--me-to-display-active-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should respect the back button" classname="tests-examples\demo-todo-app.spec.ts" time="1.41">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-7cf8c-uld-respect-the-back-button-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display completed items" classname="tests-examples\demo-todo-app.spec.ts" time="1.238">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-4151f--to-display-completed-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should allow me to display all items" classname="tests-examples\demo-todo-app.spec.ts" time="1.606">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-4b396-low-me-to-display-all-items-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Routing › should highlight the currently applied filter" classname="tests-examples\demo-todo-app.spec.ts" time="1.161">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-examples-demo-todo-a-ae530-he-currently-applied-filter-Firefox\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
